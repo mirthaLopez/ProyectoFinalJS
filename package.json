@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/pages/administracion.html --open"
+    "start": "parcel src/pages/historial.html --open"
   },
   "keywords": [],
   "author": "",

@@ -155,7 +155,8 @@ async function mostrarHistorial() {
             let id = solicitudes[index].id
             let url = "http://localhost:3007/allRequest";
             deleteRequests(url, id); //// Elimina la solicitud del endpoint de historial.
-            solicitud.remove()
+            solicitud.remove();
+            contenedorBoton.remove()
             //////////Otorga permiso para la funcion cargar
             localStorage.setItem("permiso", 1)
         })

@@ -15,42 +15,18 @@
       "contrasena": "123",
       "cedula": "114480953",
       "rol": "Administrador"
-    }
-  ],
-  "pendingRequest": [
-    {
-      "id": "cab0",
-      "nombre": "Mirtha",
-      "correo": "mirtha.com",
-      "sede": "Santa Ana",
-      "fechaSalida": "2024-08-03",
-      "fechaIngreso": "2024-08-15",
-      "codigoPc": "1122",
-      "estado": "Pendiente"
-    }
-  ],
-  "allRequest": [
-    {
-      "id": "065b",
-      "nombre": "Mirtha",
-      "correo": "mirtha.com",
-      "sede": "Puntarenas",
-      "fechaSalida": "2024-08-16",
-      "fechaIngreso": "2024-08-09",
-      "codigoPc": "2233",
-      "estado": "Aceptada"
     },
     {
-      "id": "0a02",
-      "nombre": "Mirtha",
-      "correo": "mirtha.com",
-      "sede": "Santa Ana",
-      "fechaSalida": "2024-08-10",
-      "fechaIngreso": "2024-08-08",
-      "codigoPc": "4455",
-      "estado": "Rechazada"
+      "id": "e610",
+      "nombre": "´Javier",
+      "correo": "javier.com",
+      "contrasena": "123",
+      "cedula": "11233",
+      "rol": "Estudiante"
     }
   ],
+  "pendingRequest": [],
+  "allRequest": [],
   "aprovedRequest": [
     {
       "id": "867f",
@@ -60,6 +36,26 @@
       "fechaSalida": "2024-08-16",
       "fechaIngreso": "2024-08-09",
       "codigoPc": "2233",
+      "estado": "Aceptada"
+    },
+    {
+      "id": "377f",
+      "nombre": "Mirtha",
+      "correo": "mirtha.com",
+      "sede": "Nosara",
+      "fechaSalida": "2024-08-31",
+      "fechaIngreso": "2024-08-31",
+      "codigoPc": "256",
+      "estado": "Aceptada"
+    },
+    {
+      "id": "b60d",
+      "nombre": "Mirtha",
+      "correo": "mirtha.com",
+      "sede": "Santa Ana",
+      "fechaSalida": "2024-08-03",
+      "fechaIngreso": "2024-08-15",
+      "codigoPc": "1122",
       "estado": "Aceptada"
     }
   ]

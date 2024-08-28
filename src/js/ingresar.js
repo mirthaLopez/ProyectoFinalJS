@@ -29,7 +29,6 @@ botonI.addEventListener("click", function () {
                     if (lista[index].rol === "Administrador") {
                         console.log("aqui");
                         window.location.replace('http://localhost:1234/administracion.html')
-                        //window.location.href = 'http://localhost:1234/src/pages/administracion';
                      }else{
                         window.location.replace('http://localhost:1234/solicitud.html')
                      }
