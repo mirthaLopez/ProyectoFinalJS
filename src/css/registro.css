@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #c4dde7d2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconoUser{
+    width: 70px;
+    height: 70px;
+}
+.contedorUsername{
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    background-image: url(../img/high-angle-view-laptop-stationeries-blue-background.jpg);
+    background-size: cover;
+}
+.contenedorRegistro{
+    display: flex;
+    justify-content: center;
+}
+.contenedorDatos{
+    position: relative;
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 30px;
+    margin-top: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.registro {
+    text-align: center;
+    margin: 10px;
+}
+
+.input {
+    width: 100%;
+    background: transparent;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #fff;
+    font-size: 18px;
+    
+}
+.input:hover{
+    background-color: white;
+    border: 1px solid rgb(161,67,165);
+
+}
+.botonRegistrar {
+   width: 100%;
+   background: #0FD7CD;
+   border: none;
+   padding: 12px;
+   color: black;
+   margin: 16px 0;
+   font-size: 16px;
+   border-radius: 5px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.textoBienvenida {
+    margin-top: 10px;
+}

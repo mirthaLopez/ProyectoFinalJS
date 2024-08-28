@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header{
+    background-color: #c4dde7d2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconoUser{
+    width: 70px;
+    height: 70px;
+}
+.contedorUsername{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-image: url(../img/high-angle-view-laptop-stationeries-blue-background.jpg);
+    background-size: cover;
+}
+.ingresar{
+    text-align: center;
+}
+
+.contenedor1{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+.contenedor{
+    position: relative;
+    width: 400px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    box-shadow: 0 0 30px black;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 30px;
+    margin-top: 80px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.botonI{
+    width: 100%;
+    background: #0FD7CD;
+    border: none;
+    padding: 12px;
+    color: black;
+    margin: 16px 0;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-radius: 5px;
+}
+
+.input1{
+    width: 100%;
+    background: transparent;
+    padding: 5px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #fff;
+    font-family: 'calibri';
+    font-size: 18px;
+}
+

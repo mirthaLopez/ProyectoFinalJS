@@ -1,0 +1,232 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+header{
+    background-color: #c4dde7d2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.iconoUser{
+    width: 70px;
+    height: 70px;
+}
+.contedorUsername{
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    font-family: "Lilita One", sans-serif;
+    background-image: url(../img/high-angle-view-laptop-stationeries-blue-background.jpg);
+    background-size: cover;
+}
+
+
+.solicitud {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+.solicitud2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.icono {
+    height: 60px;
+    width: 50px;
+}
+
+.contenedorSearch {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 40px;
+}
+
+.barraBusqueda {
+    display: flex;
+    justify-content: end;
+}
+
+input{
+    width: 80%;
+    margin: 20px 0;
+    box-sizing: border-box;
+    border: 2px solid #4f4d4d;
+    border-radius: 20px;
+    background-color: #f0f0f0; 
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+input:hover {
+    border-color: #008fd4; 
+}
+
+.btnBusqueda {
+    display: flex;
+    justify-content: left;
+}
+#btnSearch {
+    margin:20px;
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+    font-family: "Lilita One", sans-serif;
+    color: #fff;
+    background-color: #008fd4;
+    border: none;
+    box-shadow: 0px 10px 22px rgba(96, 96, 96, 0.3);
+    border-radius: 12px;
+}
+
+.btnEliminar {
+    margin:20px;
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+    font-family: "Lilita One", sans-serif;
+    color: #fff;
+    background-color: #f26b6b;
+    border: none;
+    box-shadow: 0px 10px 22px rgba(96, 96, 96, 0.3);
+    border-radius: 12px;
+}
+
+.btnEliminar:hover, 
+#btnSearch:hover {
+    color: black;
+    background-position: left;
+}
+
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    color: #4f4d4d;
+}
+
+.contenedorPrincipal{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    padding: 30px;
+    gap: 1rem;
+}
+
+.divTitleHistory{
+    display: flex;
+    justify-content: center;
+}
+#containerHistory{
+    background-color: rgba(255, 255, 255, 0.817);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 20px;
+    min-width: 1000px;
+    justify-content: center;
+    padding: auto;
+}
+
+#containerResults{
+    background-color: rgba(255, 255, 255, 0.817);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    border-radius: 20px;
+    min-width: 900px;
+    justify-content: center;
+    text-align: center;
+    padding: auto;
+}
+
+.tituloHistorial{
+    font-size: 40px;
+    color:#008fd4;
+    margin: 20px;
+}
+
+.tituloResultado{
+    font-size: 40px;
+    color: #008fd4;
+    margin: 20px;
+}
+.contenedorBtn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: end;
+}
+
+.btnEnlace{
+    margin:20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btnEnlace2 {
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+    font-family: "Lilita One", sans-serif;
+    color: #fff;
+    background-color: #008fd4;
+    border: none;
+    box-shadow: 0px 10px 22px rgba(96, 96, 96, 0.3);
+    border-radius: 12px;
+    background: linear-gradient(to left, #008fd4 50%, #fff 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+
+.btnEnlace2:hover {
+    color: black;
+    background-position: left;
+}
+
+.contenedorBoton{
+    display: flex;
+    justify-content: start;
+    padding-left: 0%;
+    margin-left: 0%;
+}
+
+/*Media Quearies*/
+@media (max-width:900px) {
+    #containerHistory{
+        margin: 15px;
+        min-width:fit-content;
+    }
+    .solicitud {
+        grid-template-columns: repeat(2, 1fr);
+        border: none;
+        box-shadow: 0px 10px 22px rgba(96, 96, 96, 0.3);
+        border-radius: 8px;
+        padding: 20px;
+        gap: 2rem;
+    }
+    .icono{
+        min-width: auto;
+        min-height: auto;
+    }
+    #containerResults{
+        margin: auto;
+        min-width:fit-content;
+    }
+    .tituloResultado{
+        font-size: 30px;
+        margin: 10px;
+    }
+    .tituloHistorial{
+        font-size: 30px;
+        margin: 10px;
+    }
+    .contenedorPrincipal{
+        grid-template-columns: 1fr;
+    }
+    .contenedorBoton{
+        display: flex;
+        justify-content: center;
+    }
+}

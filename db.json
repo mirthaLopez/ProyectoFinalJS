@@ -1,0 +1,96 @@
+{
+  "users": [
+    {
+      "id": "54d9",
+      "nombre": "Mirtha",
+      "correo": "mirtha.com",
+      "contrasena": "123",
+      "cedula": "114480953",
+      "rol": "Administrador"
+    },
+    {
+      "id": "7a31",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "contrasena": "123",
+      "cedula": "114480953",
+      "rol": "Estudiante"
+    }
+  ],
+  "pendingRequest": [
+    {
+      "id": "b8f9",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Puntarenas",
+      "fechaSalida": "2024-08-16",
+      "fechaIngreso": "2024-08-14",
+      "codigoPc": "456",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "5b21",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Puntarenas",
+      "fechaSalida": "2024-08-02",
+      "fechaIngreso": "2024-08-01",
+      "codigoPc": "789",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "e36b",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Puntarenas",
+      "fechaSalida": "2024-08-08",
+      "fechaIngreso": "2024-08-23",
+      "codigoPc": "901",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "821d",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Santa Ana",
+      "fechaSalida": "2024-08-02",
+      "fechaIngreso": "2024-08-14",
+      "codigoPc": "1122",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "2552",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Santa Ana",
+      "fechaSalida": "2024-08-09",
+      "fechaIngreso": "2024-08-16",
+      "codigoPc": "2233",
+      "estado": "Pendiente"
+    }
+  ],
+  "allRequest": [
+    {
+      "id": "3c06",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Puntarenas",
+      "fechaSalida": "2024-08-23",
+      "fechaIngreso": "2024-08-07",
+      "codigoPc": "123",
+      "estado": "Aceptada"
+    }
+  ],
+  "aprovedRequest": [
+    {
+      "id": "5f88",
+      "nombre": "Gianni",
+      "correo": "gianni.com",
+      "sede": "Puntarenas",
+      "fechaSalida": "2024-08-23",
+      "fechaIngreso": "2024-08-07",
+      "codigoPc": "123",
+      "estado": "Aceptada"
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #c4dde7ef;
+    display: flex;
+    justify-content: space-between;
+}
+.iconoUser{
+    width: 70px;
+    height: 70px;
+}
+.contedorUsername{
+    display: flex;
+    justify-content: center;
+}
+
+#userName{
+    color: #4f4d4d;
+}
+
+body {
+    font-family: "Lilita One", sans-serif;
+    background-color: #c4dde7;
+}
+
+.contenedorSolicitudes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table {
+    width: 80%;
+}
+
+th,
+td {
+    padding: 0.5rem;
+    width: 20%;
+    text-align: center;
+}
+
+thead {
+    background-color: #7bb3c3;
+}
+
+tbody>tr:nth-of-type(odd) {
+    background-color: #b6b1b1;
+}
+
+tbody>tr:nth-of-type(even) {
+    background-color: #c4dde7;
+}
+
+table tr:hover td {
+    background: #e7e6eb;
+    cursor: pointer;
+}
+
+.contenedorTitulo {
+    display: flex;
+    justify-content: center;
+}
+
+.tituloHistorial {
+    font-size: 40px;
+    color: #008fd4;
+    margin: 20px;
+}
+
+.contenedorBtn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: end;
+}
+
+.btnEnlace {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.btnEnlace2 {
+    height: 40px;
+    width: 120px;
+    font-size: 14px;
+    font-family: "Lilita One", sans-serif;
+    color: #fff;
+    background-color: #008fd4;
+    border: none;
+    box-shadow: 0px 10px 22px rgba(96, 96, 96, 0.3);
+    border-radius: 12px;
+    background: linear-gradient(to left, #008fd4 50%, #fff 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+}
+
+.btnEnlace2:hover {
+    color: black;
+    background-position: left;
+}
+
+
+
+@media (max-width:600px) {
+    .table {
+        min-width: fit-content;
+    }
+
+    th,
+    td {
+        padding: 0rem;
+    }
+
+    .contenedorSolicitudes {
+        width: 600px;
+        min-height: fit-content;
+    }
+
+    .tituloHistorial {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .contenedorTitulo {
+        justify-content: start;
+        align-items: start;
+    }
+
+}

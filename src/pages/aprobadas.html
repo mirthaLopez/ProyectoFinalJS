@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/aprobadas.css">
+    <title>Solicitudes Aceptadas</title>
+</head>
+
+<body>
+    <header>
+        <div class="contenedorLogo">
+            <a href="https://www.fwdcostarica.com/" target="_blank">
+                <img src="../img/FWD - Logotipo - Slogan_Slogan gris.webp" alt="logo"></a>
+        </div>
+        <div class="contenedorUser">
+            <div><img src="../img/profile2.png" alt="profile" class="iconoUser"></div>
+            <div class="contedorUsername">
+                <p id="userName"></p>
+            </div>
+        </div>
+    </header>
+    <div class="mainContainer">
+        <div class="contenedorTitulo">
+            <h1 class="tituloHistorial">Historial De Solicitudes Aceptadas</h1>
+        </div>
+        <div class="contenedorSolicitudes" class="table-responsive">
+            <table id="tablaSolicitudes">
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>SEDE</th>
+                        <th>FECHA SALIDA</th>
+                        <th>FECHA INGRESO</th>
+                        <th>CODIGO</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                    <!-- Rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="contenedorBtn">
+        <div class="btnEnlace"><a href="http://localhost:1234/administracion.html"><button class="btnEnlace2">Ir a
+                    Administracion</button></a></div>
+        <div class="btnEnlace"><a href="http://localhost:1234/historial.html"><button class="btnEnlace2">Ir a
+                    historial</button></a></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script type="module" src="../js/aprobadas.js"></script>
+</body>
+
+</html>
