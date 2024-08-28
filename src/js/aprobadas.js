@@ -12,10 +12,10 @@ userName.innerHTML = nombreUser.toUpperCase();
 //////////////////////////////////////////////////////////////////
 mostrarHistorial();
 async function mostrarHistorial() {
-    let url = "http://localhost:3007/aprovedRequest";
+    let url = "http://localhost:3007/aprovedRequest"; //// Trae todas las solicitudes del EndPoint de Aprobadas
     let solicitudes = await GetRequests(url);
     let out = "";
-    for (let solicitud of solicitudes) {
+    for (let solicitud of solicitudes) { //// Mediante un for of se crean las etiquetas de la tabla y se muestran los valores.
         out += `
            <tr>
 	               <td>${solicitud.nombre}</td>
@@ -29,14 +29,3 @@ async function mostrarHistorial() {
 
 tableBody.innerHTML=out;
 }
-
-/*solicitudes.map(solicitud => {
-        const row = document.createElement("tr");
-        Object.values(solicitud).map(value => {
-            const cell = document.createElement("td");
-            cell.textContent = value;
-            row.appendChild(cell);
-        });
-    
-        tableBody.appendChild(row);
-    });*/

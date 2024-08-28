@@ -8,28 +8,41 @@ import {
 ////////////////////Declaracion de variables////////////////////
 const inputSearch = document.getElementById("inputSearch");
 const btnSearch = document.getElementById("btnSearch");
-let nombreUser=localStorage.getItem("usuarioActivo");
-userName.innerHTML=nombreUser.toUpperCase();
+let nombreUser = localStorage.getItem("usuarioActivo");
+userName.innerHTML = nombreUser.toUpperCase();
 /////////////////////Evento Boton Busqueda///////////////////////
 btnSearch.addEventListener("click", function () {
-    containerResults.innerHTML = " "
-    containerHistory.style.display = "none"
-    containerResults.style.display = "inline"
+    containerResults.innerHTML = " " //// limpia el contenedor cada que se ejecuta el evento
+    containerHistory.style.display = "none" /// Oculta el contenedor cada que se ejecuta el evento
+    containerResults.style.display = "inline" /// Muestra el contenedor cada que se ejecuta el evento
 
     let tituloResultado = document.createElement("p");
     containerResults.appendChild(tituloResultado);
     tituloResultado.className = "tituloResultado"
 
-    validSearch = inputSearch.value.trim();
-    if (validSearch.length !== 0) {
+    validSearch = inputSearch.value.trim(); //// Valida que el input de busqueda no este vacio
+    if (validSearch.length !== 0) { /// Si el input tiene un valor hace la busqueda
         mostrarResultadosBusqueda();
         async function mostrarResultadosBusqueda() {
-
             let url = "http://localhost:3007/allRequest";
             let solicitudes = await GetRequests(url);
-
-            const resultado = solicitudes.filter((e) => e.nombre.includes(inputSearch.value) || e.sede.includes(inputSearch.value) || e.fechaSalida.includes(inputSearch.value) || e.fechaIngreso.includes(inputSearch.value) || e.codigoPc.includes(inputSearch.value) || e.estado.includes(inputSearch.value));
-            if (resultado.length !== 0) {
+            let inputValid=inputSearch.value.toUpperCase();/// convierto input a mayusculas      
+             /////////////////////Map para convertir a mayusculas la lista de objetos//////////////////////
+             const solicitudesMayusculas = solicitudes.map(solicitud => {
+                return {
+                    nombre: solicitud.nombre.toUpperCase(),
+                    correo: solicitud.correo.toUpperCase(),
+                    sede: solicitud.sede.toUpperCase(),
+                    fechaSalida: solicitud.fechaSalida.toUpperCase(),
+                    fechaIngreso: solicitud.fechaIngreso.toUpperCase(),
+                    codigoPc:solicitud.codigoPc.toUpperCase(),
+                    estado:solicitud.estado.toUpperCase()
+                };
+            });
+        
+            //// Mediante un filtro y un include se revisa todos los datos almacenados en el arreglo y se devuelven las coincidencias///
+            const resultado = solicitudesMayusculas.filter((e) => e.nombre.includes(inputValid) || e.sede.includes(inputValid) || e.fechaSalida.includes(inputValid) || e.fechaIngreso.includes(inputValid) || e.codigoPc.includes(inputValid) || e.estado.includes(inputValid));
+            if (resultado.length !== 0) { /// Valida si se encotro algo y lo muestra en pantalla
                 tituloResultado.innerHTML = "Aqui tienes los resultados de tu busqueda";
                 for (let index = 0; index < resultado.length; index++) {
                     let solicitud = document.createElement("div");
@@ -82,10 +95,10 @@ btnSearch.addEventListener("click", function () {
 mostrarHistorial();
 async function mostrarHistorial() {
     let url = "http://localhost:3007/allRequest";
-    let solicitudes = await GetRequests(url);
+    let solicitudes = await GetRequests(url); //// Trae todas las solicitudes almacenadas en el endpoint de historial.
 
     for (let index = 0; index < solicitudes.length; index++) {
-        
+
         ////////7///////////contenedor solicitud////////////////////////
         let contenedorPrincipal = document.createElement("div");
         contenedorPrincipal.className = "contenedorPrincipal"
@@ -114,7 +127,6 @@ async function mostrarHistorial() {
         let codigoPc = document.createElement("p");
         solicitud.appendChild(codigoPc);
         codigoPc.innerHTML = solicitudes[index].codigoPc;
-        console.log(solicitudes[index].estado);
 
         if (solicitudes[index].estado === "Aceptada") {
             let estado = document.createElement("div");
@@ -142,7 +154,7 @@ async function mostrarHistorial() {
         btnEliminar.addEventListener("click", function () {
             let id = solicitudes[index].id
             let url = "http://localhost:3007/allRequest";
-            deleteRequests(url, id);
+            deleteRequests(url, id); //// Elimina la solicitud del endpoint de historial.
             solicitud.remove()
             //////////Otorga permiso para la funcion cargar
             localStorage.setItem("permiso", 1)

@@ -19,7 +19,7 @@ const containerPendingRequests = document.getElementById("containerPendingReques
 const userName = document.getElementById("userName");
 let nombreUser = localStorage.getItem("usuarioActivo");
 userName.innerHTML = nombreUser.toUpperCase();
-///////////////////////Muestra Historial del Usuario////////////////////
+///////////////////////Muestra Historial del Solicitudes////////////////////
 showRequests();
 async function showRequests() {
     let url = "http://localhost:3007/pendingRequest";
@@ -50,19 +50,19 @@ async function showRequests() {
         codigoPc.innerHTML = solicitudes[index].codigoPc;
 
         //////////Creo un contenedor para los botones///////
-        let contenedorBtn = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+        let contenedorBtn = document.createElement("div") 
         contenedorBtn.className = "containerBtn"
-        containerPendingRequests.appendChild(contenedorBtn); //btn eliminar 
+        containerPendingRequests.appendChild(contenedorBtn); 
         ///// Crea un boton Aceptar Solicitud//////////
-        let btnAceptar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+        let btnAceptar = document.createElement("div") 
         btnAceptar.innerHTML = `<div class="divCheck"><img class="btn" src="/check_5610944.cfc1f449.png"></div><p class="descripcionBtn">Aceptar</p>`;
         btnAceptar.className = "btnContenedor2"
         contenedorBtn.appendChild(btnAceptar);
         ///// Crea un boton Rechazar Solicitud/////////
-        let btnRechazar = document.createElement("div") // esta variable me permite crear un boton cada vez que se ejecuta el evento
+        let btnRechazar = document.createElement("div") 
         btnRechazar.innerHTML = `<div class="divCheck"><img class="btn" src="/2031018.3a579747.png"></div><p class="descripcionBtn">Rechazar</p>`;
         btnRechazar.className = "btnContenedor"
-        contenedorBtn.appendChild(btnRechazar); //btn eliminar 
+        contenedorBtn.appendChild(btnRechazar); 
         /////Creo un evento para el boton Aceptar/////////
         btnAceptar.addEventListener("click", function () {
             let request = {
@@ -78,14 +78,15 @@ async function showRequests() {
             let url = "http://localhost:3007/allRequest";
             let link = "http://localhost:3007/aprovedRequest";
             let url2 = "http://localhost:3007/pendingRequest"
-            PostRequest(request, url)
-            PostRequest(request, link)
-            deleteRequests(url2, solicitudes[index].id);
+            PostRequest(request, url) /// Envia la solicitud con el nuevo estado al endpoint de historial
+            PostRequest(request, link)/// Envia la solicitud con el nuevo estado al endpoint de aprobadas
+            deleteRequests(url2, solicitudes[index].id);//// Elimina la solicitud del endpoint de solicitudes pendientes
+            ///Remeuve las etiquetas en pantalla///////
             solicitud.remove();
             linea.remove();
             contenedorBtn.remove();
-
-            localStorage.setItem("permiso", 1) //////////Otorga permiso para la funcion cargar
+            //////////Otorga permiso para la funcion cargar
+            localStorage.setItem("permiso", 1) 
         })
         /////Creo un evento para el boton Rechazar/////////
         btnRechazar.addEventListener("click", function () {
@@ -99,15 +100,18 @@ async function showRequests() {
                 estado: "Rechazada"
             }
             let url = "http://localhost:3007/allRequest";
-            PostRequest(request, url);
-            let link = "http://localhost:3007/pendingRequest"
+            PostRequest(request, url); /// Envia la solicitud con el nuevo estado al endpoint de historial
+            let link = "http://localhost:3007/pendingRequest"//// Elimina la solicitud del endpoint de solicitudes pendientes
             deleteRequests(link, solicitudes[index].id);
+            ///Remeuve las etiquetas en pantalla///////
             solicitud.remove();
             linea.remove();
             contenedorBtn.remove();
-
+            //////////Otorga permiso para la funcion cargar///
             localStorage.setItem("permiso", 1)
         })
+
+        ///// Crea una etiqueta hr/////////////
         let linea = document.createElement("hr");
         containerPendingRequests.appendChild(linea);
         linea.className = "saltoLinea"

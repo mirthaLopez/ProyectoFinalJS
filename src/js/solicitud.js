@@ -26,11 +26,12 @@ inputCorreo.value = localStorage.getItem("correoActivo")
 let correoUser = inputCorreo.value;
 let nombreUser = localStorage.getItem("usuarioActivo");
 userName.innerHTML = nombreUser.toUpperCase();
-
 //////////////////////////Modal////////////////////////////////////////
 var modal = document.getElementById("myModal");
 // Span cierra el modal
 var span = document.getElementsByClassName("close")[0];
+
+
 //////////////////////Funcion Carga la pagina ///////////////////////////
 const permiso = localStorage.getItem("permiso")
 if (permiso === "1") {
@@ -43,8 +44,8 @@ function cargar() {
 }
 /////////////////////Evento enviar solicitud////////////////////////////
 btnEnviar.addEventListener("click", function () {
-    if (validarForm() === true) {
-        const solicitud = {
+    if (validarForm() === true) { ////////// si se cumple que el formulario esta lleno, ejecuta.
+        const solicitud = { ///////////creo un objeto con los datos de la solicitud.
             nombre: nombre.value,
             correo: correo.value,
             sede: selector.value,
@@ -54,10 +55,10 @@ btnEnviar.addEventListener("click", function () {
             estado: "Pendiente"
         }
         let url = 'http://localhost:3007/pendingRequest';
-        PostRequest(solicitud, url);
-        setTimeout(() => {
+        PostRequest(solicitud, url);//// Guarda una nueva solicitud en el server.
+        setTimeout(() => { ///// Recarga la pagina despues de 3 segundos.
             location.reload();
-          }, "3000");
+        }, "3000");
         
     } else {
         textAdvertencia.innerHTML = "Completa todas las casillas del formulario"
@@ -75,8 +76,9 @@ function validarForm() {
     if (checkStatus === true && selector.value !== "" && validadorCodigo.length !== 0 && validadorNombre.length !== 0 &&
         validadorSalida.length !== 0 && validadorIngreso.length !== 0) {
         textAdvertencia.innerHTML = "Tu solicitud ha sido enviada con exito"
-        modal.style.display = "block";
 
+        /////Muestra el modal//////
+        modal.style.display = "block";
         // Cierre modal (x)
         span.onclick = function () {
             modal.style.display = "none";
@@ -117,11 +119,11 @@ let historyUrl = "http://localhost:3007/allRequest";
 showRequests(historyUrl);
 console.log("aqui");
 async function showRequests(url) {
-    let listaSolicitudes = await GetRequests(url);
+    let listaSolicitudes = await GetRequests(url); /// Trae las solicitudes almacenadas en el endpoint de historial y solicitudes pendientes
 
-    let listaFiltrada = listaSolicitudes.filter(solicitud => solicitud.correo === correoUser)
-    let solicitudesInvertidas = listaFiltrada.reverse();
-    solicitudesInvertidas.map((solicitud) => {
+    let listaFiltrada = listaSolicitudes.filter(solicitud => solicitud.correo === correoUser)/// Filtra las solicitudes vinculadas con el usuario logueado actualmente.
+    let solicitudesInvertidas = listaFiltrada.reverse(); /// Invierte el orden de las solicitudes para mostrar la ultima de primero.
+    solicitudesInvertidas.map((solicitud) => { //// mapa para crear y llenar la tabla de historial de solicitudes del user.
         const fila = tableBody.insertRow();
         const estado = fila.insertCell(0);
         const nombre = fila.insertCell(1);
